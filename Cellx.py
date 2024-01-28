@@ -60,7 +60,7 @@ cmd(_D)
 
 
 ###-------------------### DATE TIME CHECKER ###-------------###
-script_status = "PREM
+script_status = "FREE"
 months_check = {
     "1": "January",
     "2": "February",
